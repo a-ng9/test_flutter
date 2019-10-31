@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/camera.dart';
+
+import 'package:test_flutter/screens/camera.dart';
+// import 'package:test_flutter/screens/location_screen.dart';
+
+import 'package:test_flutter/widgets/location_input.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,17 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              RaisedButton(
+              RaisedButton.icon(
+                icon: Icon(Icons.camera_alt),
+                label: Text("Camera"),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => CameraScreen()));
                 },
-                child: Text("Camera"),
               ),
-              RaisedButton(
-                onPressed: () {},
-                child: Text("Geolocation"),
-              ),
+              LocationInput(),
               RaisedButton(
                 onPressed: () {},
                 child: Text("Connectivity"),
