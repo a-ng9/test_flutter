@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/screens/connectivity.dart';
 
 import 'package:test_flutter/screens/camera.dart';
-// import 'package:test_flutter/screens/location_screen.dart';
+import 'package:test_flutter/widgets/connectivity.dart';
 
 import 'package:test_flutter/widgets/location_input.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Testing Home Page'),
     );
   }
 }
@@ -50,9 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               LocationInput(),
-              RaisedButton(
-                onPressed: () {},
-                child: Text("Connectivity"),
+              RaisedButton.icon(
+                icon: Icon(Icons.wifi_tethering),
+                label: Text("Connectivity"),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InternetConnectivity()));
+                },
               ),
               RaisedButton(
                 onPressed: () {},
