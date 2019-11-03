@@ -27,6 +27,8 @@ dependencies:
   location: 2.3.5
   connectivity: 0.4.5+2
   data_connection_checker: 0.3.4
+  flutter_local_notifications: 0.8.4
+
 
 
 

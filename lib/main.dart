@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_flutter/screens/connectivity.dart';
 
 import 'package:test_flutter/screens/camera.dart';
-import 'package:test_flutter/widgets/connectivity.dart';
-
+import 'package:test_flutter/screens/local_notification.dart';
 import 'package:test_flutter/widgets/location_input.dart';
 
 void main() => runApp(MyApp());
@@ -61,9 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => InternetConnectivity()));
                 },
               ),
-              RaisedButton(
-                onPressed: () {},
-                child: Text("Local Notification"),
+              RaisedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LocalNotification()));
+                },
+                icon: Icon(Icons.notifications),
+                label: Text("Local Notification"),
               )
             ],
           ),
