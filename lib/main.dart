@@ -3,6 +3,7 @@ import 'package:test_flutter/screens/connectivity.dart';
 
 import 'package:test_flutter/screens/camera.dart';
 import 'package:test_flutter/screens/local_notification.dart';
+import 'package:test_flutter/screens/location_googleMaps.dart';
 import 'package:test_flutter/widgets/location_input.dart';
 
 void main() => runApp(MyApp());
@@ -49,7 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => CameraScreen()));
                 },
               ),
-              LocationInput(),
               RaisedButton.icon(
                 icon: Icon(Icons.wifi_tethering),
                 label: Text("Connectivity"),
@@ -69,6 +69,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 icon: Icon(Icons.notifications),
                 label: Text("Local Notification"),
+              ),
+              //Gives the latitude and longitude coordinates in the debug console
+              LocationInput(),
+              ////////////////////////////////////////////////////////////////////
+              RaisedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LocationGoogleMaps()));
+                },
+                icon: Icon(Icons.map),
+                label: Text("Google Maps"),
               )
             ],
           ),
