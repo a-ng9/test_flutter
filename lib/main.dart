@@ -4,25 +4,20 @@ import 'package:test_flutter/screens/connectivity.dart';
 import 'package:test_flutter/screens/camera.dart';
 import 'package:test_flutter/screens/local_notification.dart';
 import 'package:test_flutter/screens/location_screen.dart';
+import 'package:test_flutter/screens/webView.dart';
 import 'package:test_flutter/widgets/location_input.dart';
-import 'package:test_flutter/providers/location_provider.dart';
-
-import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      value: MapLocation(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: MyHomePage(title: 'Flutter Testing Home Page'),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: MyHomePage(title: 'Flutter Testing Home Page'),
     );
   }
 }
@@ -88,7 +83,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 icon: Icon(Icons.map),
                 label: Text("Google Maps"),
-              )
+              ),
+              RaisedButton.icon(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => WebViewScreen()));
+                },
+                icon: Icon(Icons.web),
+                label: Text("Web View"),
+              ),
             ],
           ),
         ));
