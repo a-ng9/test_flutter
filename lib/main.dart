@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_flutter/screens/connectivity.dart';
 
 import 'package:test_flutter/screens/camera.dart';
+import 'package:test_flutter/screens/listView.dart';
 import 'package:test_flutter/screens/local_notification.dart';
 import 'package:test_flutter/screens/location_screen.dart';
 import 'package:test_flutter/screens/webView.dart';
@@ -91,6 +92,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 icon: Icon(Icons.web),
                 label: Text("Web View"),
+              ),
+              RaisedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ListViewDismissScreen()));
+                },
+                icon: Icon(Icons.list),
+                label: Text("ListView with swipe dismiss"),
               ),
             ],
           ),
